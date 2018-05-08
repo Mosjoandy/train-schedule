@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Train Schedule</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                        <h1 class="display-4 text-center">Train Schedule</h1>
+                        <p class="lead text-center">Save gas, go pubtranspo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">Current Train Schedule</div>
+                    <div class="card-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                <th scope="col">Train Name</th>
+                                <th scope="col">Destination</th>
+                                <th scope="col">Frequency (minutes)</th>
+                                <th scope="col">Next Arrival</th>
+                                <th scope="col">Minutes Away</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td>Train1 placeholder</td>
+                                <td>Knowhere</td>
+                                <td>30</td>
+                                <td>Jaynestown</td>
+                                <td>60</td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">Add Train</div>
+                        <div class="card-body">
+                            <form>
+
+                                <!-- Add train -->
+                                <div class="form-group">
+                                    <label >Train Name</label>
+                                    <input type="text" class="form-control" id="">
+                                </div>
+
+                                <!-- Add destination -->
+                                <div class="form-group">
+                                    <label >Destination</label>
+                                    <input type="text" class="form-control" id="">
+                                </div>
+
+                                <!-- Add time in military time -->
+                                <div class="form-group">
+                                    <label >First Train Time (HH:MM - Military Time)</label>
+                                    <input type="time" name="military" class="form-control" id="">
+                                </div>
+
+                                <!-- Add frequency in minutes -->
+                                <div class="form-group">
+                                    <label >Frequency (minutes)</label>
+                                    <input type="number" class="form-control" id="">
+                                </div>
+
+                                <!-- submit button and clear button -->
+                                <button type="button" class="btn btn-secondary" id="addTrainButton">Search</button>
+
+                            </form>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
+</html>
