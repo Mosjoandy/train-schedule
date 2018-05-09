@@ -1,3 +1,25 @@
 .card {
     margin-bottom: 2em;
 }
+
+
+.jumbotron, .card-header {
+    Font-Family: 'Merriweather', Serif;
+    font-weight: bold;
+    background: #e4ebed;
+    color: #312E1A;
+ 
+ 
+}
+.jumbotron {
+    border: lightgrey 1px solid;
+}
+
+body {
+    background-image: url("../images/concrete_seamless.png");
+    Font-Family: 'Muli', Sans-Serif;
+}
+
+label {
+    font-weight: bold;
+}

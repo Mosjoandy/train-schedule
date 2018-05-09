@@ -5,7 +5,9 @@
     <title>Train Schedule</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Muli:300" rel="stylesheet">
     <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
 </head>
 
@@ -60,25 +62,25 @@
                                 <!-- Add train -->
                                 <div class="form-group">
                                     <label >Train Name</label>
-                                    <input type="text" class="form-control" id="trainName-input">
+                                    <input type="text" class="form-control" id="trainName-input" placeholder="Train Name">
                                 </div>
 
                                 <!-- Add destination -->
                                 <div class="form-group">
                                     <label >Destination</label>
-                                    <input type="text" class="form-control" id="trainDestination-input">
+                                    <input type="text" class="form-control" id="trainDestination-input" placeholder="Final Destination">
                                 </div>
 
                                 <!-- Add time in military time -->
                                 <div class="form-group">
-                                    <label >First Train Time (HH:MM - Military Time)</label>
-                                    <input type="time"  class="form-control" id="trainFirst-input">
+                                    <label >First Train Time (HH:MM - AM/PM)</label>
+                                    <input type="time"  class="form-control" id="trainFirst-input" placeholder="HH:MM">
                                 </div>
 
                                 <!-- Add frequency in minutes -->
                                 <div class="form-group">
                                     <label >Frequency (minutes)</label>
-                                    <input type="number" class="form-control" id="trainFrequency-input">
+                                    <input type="number" class="form-control" id="trainFrequency-input" placeholder="MM">
                                 </div>
 
                                 <!-- submit button and clear button -->

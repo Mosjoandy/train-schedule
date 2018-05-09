@@ -11,6 +11,7 @@ var config = {
 
   var database = firebase.database();
 
+// Making var's for the submit button
 var trainName = "";
 var trainDestination = "";
 var trainFirst = "";
@@ -19,20 +20,7 @@ var trainFrequency = "";
 // Submit button takes all data in forms 
 $("#addTrainButton").on("click", function(event) {
     event.preventDefault();
-    
-    // Make a new table row
-    newTableRow = $("<tr>");
-    newTableRow.attr("scope", "row");
 
-    // Make a new table columns
-    $("<td>").text($("#trainName-input").val().trim()).appendTo(newTableRow);
-    $("<td>").text($("#trainDestination-input").val().trim()).appendTo(newTableRow);
-    $("<td>").text($("#trainFirst-input").val().trim()).appendTo(newTableRow);
-    $("<td>").text($("#trainFrequency-input").val().trim()).appendTo(newTableRow);
-
-    // Append table row to tbody, thus allowing it to appear on display
-    newTableRow.appendTo("#initialTable")
-   
     // make vars for firebase storage
     trainName = $("#trainName-input").val().trim();
     trainDestination = $("#trainDestination-input").val().trim();
@@ -55,9 +43,41 @@ $("#addTrainButton").on("click", function(event) {
     $("#trainFrequency-input").val(" ");
 });
 
-// Update data in firebase  
+// Call firebase database based on dateAdded and print to screen all existing objects with append
+database.ref().on("child_added", function(snapshot) {
 
-// trainFrequency = $("#trainFrequency-input").val().trim();
-// trainFirst = $("#trainFirst-input").val().trim();
+    // pulling firebase data
+    var name = snapshot.val().name;
+    var destination = snapshot.val().destination;
+    var first = snapshot.val().first;
+    var frequency = snapshot.val().frequency;
 
-// var timeConverted = moment(trainFirst, "HH:mm").sutract(1, "years");
+        // setting var to firebase frequency
+        var tFrequency = frequency;
+
+        // setting var to firebase first
+        var firstTime = first;
+
+        //remove the years
+        var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+
+        // Current Time
+        var currentTime = moment();
+
+        // Difference between the times
+        var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+
+        // Time apart using modular 
+        var tRemainder = diffTime % tFrequency;
+
+        // Minute Until Train
+        var tMinutesTillTrain = tFrequency - tRemainder;
+
+        // Next Train
+        var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+
+    // dynamically creating and appending a new row in the table with new columns containing all the relavant train data
+$("#initialTable").append("<tr><td>" + name + "</td><td>" + destination + "</td><td>" +
+first + "</td><td>" + moment(nextTrain).format("HH:mm") + "</td><td>" + tMinutesTillTrain + "</td></tr>");
+
+});
